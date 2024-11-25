@@ -1,0 +1,68 @@
+<h2>Programming book list !!!</h2>
+
+<!-- <button (click)="onClick()" (mouseover)="onClick2()" [disabled]="isDisabled">
+  Show Book
+</button> -->
+
+<!-- &nbsp;&nbsp;&nbsp;
+
+<p>EVENT BINDING</p>
+<input
+  type="text"
+  placeholder="Name"
+  (change)="onInput($event)"
+  (input)="onKeyStroke($event)"
+/>
+
+&nbsp;&nbsp;&nbsp;
+
+<span> {{ typingBookName }} - {{ bookName }}</span>
+
+&nbsp;&nbsp;&nbsp;
+
+<p>TWO - WAY BINDING</p>
+<input
+  type="text"
+  [(ngModel)]="myName2way"
+  (ngModelChange)="on2wayChange($event)"
+/>
+&nbsp;&nbsp;&nbsp;
+<span>{{ myName2way }}</span> -->
+
+<!-- <p>Toogle books button</p> -->
+
+<button
+  (click)="showBooks = !showBooks"
+  class="px-4 py-2 font-medium text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition"
+>
+  <ng-container *ngIf="!showBooks">Show Books</ng-container>
+  <ng-container *ngIf="showBooks">Hide Books</ng-container>
+</button>
+
+<br />
+<br />
+
+<div>
+  <!-- <button>Book Counter</button>
+  &nbsp;&nbsp;&nbsp;
+  <span>{{ bookCount }}</span> -->
+
+  <!-- <ng-container *ngIf="bookCount > 0">
+    <ul class="cart-list">
+      <ng-container *ngFor="let cartBook of mapEntries()">
+        <li>{{ cartBook[0] }} - Count: {{ cartBook[1] }}</li>
+        &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+      </ng-container>
+    </ul>
+  </ng-container> -->
+</div>
+
+<ul *ngIf="showBooks">
+  <ng-container *ngFor="let book of books; let i = index">
+    <app-book [book]="book"></app-book>
+  </ng-container>
+</ul>
+
+<!-- <div *ngIf="showBooks">
+  <span><button (click)="clearCart()">CLEAR</button></span>
+</div> -->
